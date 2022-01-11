@@ -1,11 +1,11 @@
 void setup() {
   Serial.begin(9600);
   // put your setup code here, to run once:
-  int aReal = 5;
-  int aImag = 7;
+  // int aReal = 5;
+  // int aImag = 7;
 
-  int bReal = 6;
-  float bImag = 5.5;
+  //int bReal = 6;
+  //float bImag = 5.5;
 
   float ResR, ResI;
   
