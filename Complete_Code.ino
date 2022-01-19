@@ -41,10 +41,10 @@ byte sine_data [91] =
 float Freq_Flow[numReadings], Real_Flow[numReadings], Imag_Flow[numReadings];            //Storing Frequency, Imaginary and Real values of flow
 float Freq_MP[numReadings], Real_MP[numReadings], Imag_MP[numReadings];                  //Storing Frequency, Imaginary and Real values of mouth pressure
 float F_Freq[4], F_Real[4], F_Imag[4];                        //5 values for frequencies of 5, 10, 15, 20 and 25Hz
-/*
+
   int   RedLed      = 22 ;
-  int   GreenLed    = 23 ;
-*/
+  int   GreenLed    = 23 ;      //declaring red and green LED pins
+
 float FlowPressureReading;   //Storing Variable ADC
 float MouthPressureReading;  //Storing Variable ADC
 
@@ -64,18 +64,16 @@ void setup() {
   Serial.begin(9600);
   BTHC08Serial.begin(9600);
 
-  pinMode(HIGH_16, OUTPUT);
+  pinMode(HIGH_16, OUTPUT); 
   pinMode(HIGH_17, OUTPUT);
   pinMode(LOW_0, INPUT);
-  digitalWrite(HIGH_16, HIGH);
-  digitalWrite(HIGH_17, HIGH);
+  digitalWrite(HIGH_16, HIGH);             // assigning HI to digital outputs that will power the sensors
+  digitalWrite(HIGH_17, HIGH);             // at 3.3V
  
   analogReadResolution(10);
 
-  delay(5000);
-
+  delay(5000);                              //5 second delay before testing begins
 }
-
 
 //--------------------------------------------------------------------------------------------------------------
 void loop() {
